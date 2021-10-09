@@ -40,10 +40,10 @@ def registroTurno(matriz):
             assert (1000<=horaComparar<=1400), "Se ingresó un horario en el que el médico no trabaja"
             
             datos = [dniTurno,mesTurno,diaTurno,horaTurno]
-            #if validarTurno(matriz,datos)==False:
-            matriz.append(datos)
-            #else:
-                #print("Error al registrar el turno: Ya hay un turno registrado para esa fecha y horario")
+            if validarTurno(matriz,datos)==True:
+                matriz.append(datos)
+            else:
+                print("Error al registrar el turno: Ya hay un turno registrado para esa fecha y horario")
         except AssertionError as error:
             print("Error al registrar el turno:",error)
         finally:
@@ -89,8 +89,13 @@ def verificarHoraValida(hora):
     else:
         return False
 
-#def validarTurno(matriz,data):
-  
-matrizTurnos = [["DNI", "Mes", "Dia", "Hora"]]
+def validarTurno(matriz,data):
+    valido = True
+    for f in range (len(matriz)):
+        if matriz[f][1] == data[1] and matriz[f][2] == data[2] and matriz[f][3] == data[3]:
+            valido = False
+    return valido
+            
+matrizTurnos = [["DNI", "Mes", "Dia", "Hora"],["1503","Febrero",13,"10:30"]]
 registroTurno(matrizTurnos)
 print(matrizTurnos)
