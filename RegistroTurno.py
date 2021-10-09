@@ -2,14 +2,13 @@
 limites:
     dias no permitidos - 1, 8, 15, 22
     horas permitidas - de 10:00 a 14:00
-    duracion del turno (arbitrario) - 15 minutos
     no se permiten tener dos turnos a la vez (ej: 9:30 y 9:40)
     
 Funciones:
 registroTurno = Iniciliza el registro de turnos para cargarlos en una matriz
 verificarMes  = Verifica que el mes ingresado corresponda a nuestro calendario
 verificarDia  = Verifica que el dia ingresado corresponda a uno de los días disponibles en su respectivo mes
-horaTurno     = Transforma el turno ingresado en entero (para comparar)'''
+'''
 
 def registroTurno(matriz):
     print("Registro de turnos inicializado. A considerar:")
