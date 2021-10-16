@@ -1,0 +1,2 @@
+'proyecto.py' modificado para integrar la funcion para registrar turnos
+Nueva carpeta 'turnos' con funciones relevantes al registro de turnos
