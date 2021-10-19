@@ -1,0 +1,17 @@
+def get_month_number(month_name):
+    '''Obtain the number of month by name'''
+    months = {'Enero': 1, 'Febrero':2, 'Marzo': 3, 'Abril': 4, 'Mayo': 5, 'Junio': 6, 'Julio': 7, 'Agosto': 8, 'Septiembre': 9, 'Octubre': 10, 'Noviembre': 11, 'Diciembre': 12}
+    return months[month_name] 
+
+
+def transform_data():
+    from datetime import time
+    MatrizTurnos  = [['21', 'Marzo', '13', '10:30'], ['22', 'Febrero', '14', '9:45'], ['44', 'Marzo', '13', '8:01']]
+    for elem in MatrizTurnos:
+        str_date = '2021/%s/%s %s'%(get_month_number(elem[1]), elem[2], elem[3])
+        obj_date = datetime.strptime(str_date, '%Y/%m/%d %H:%M')
+        elem.append(obj_date)
+
+    # sort the list
+    print (MatrizTurnos)
+    print ( sorted(MatrizTurnos, key=lambda e: e[4]) )
